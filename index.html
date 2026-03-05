@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script type="module" crossorigin src="/DS/assets/index-8KY5r0ef.js"></script>
+    <link rel="stylesheet" crossorigin href="/DS/assets/index-BqCziuyF.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  
+    <script>
+      (function(){
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get('p');
+        if(p){
+          var clean = p.startsWith('/') ? p : '/' + p;
+          window.history.replaceState(null, '', clean);
+        }
+      })();
+    </script>
+    
+</body>
+</html>
+

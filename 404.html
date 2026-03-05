@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DocShield</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      // GitHub Pages SPA redirect
+      var pathSegmentsToKeep = 1; // keeps "/<repo>/"
+      var l = window.location;
+      var segments = l.pathname.split('/');
+      var repo = segments.slice(0, 1 + pathSegmentsToKeep).join('/');
+      var redirect = repo + '/?p=' + encodeURIComponent(l.pathname + l.search + l.hash);
+      l.replace(redirect);
+    </script>
+  </body>
+</html>
