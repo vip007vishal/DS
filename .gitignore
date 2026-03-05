@@ -7,4 +7,5 @@ coverage/
 .env*
 !.env.example
 
-/src/generated/prisma
+# local secrets
+.env.local

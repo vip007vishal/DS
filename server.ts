@@ -1,28 +1,55 @@
+import "dotenv/config";
 import express from "express";
+import path from "path";
+import cors from "cors";
 import { createServer as createViteServer } from "vite";
-import apiRouter from "./server/api/index";
-import dotenv from "dotenv";
-import fs from "fs";
+import { readJson, writeJson } from "./api/src/lib/storage";
+import { User } from "./api/src/lib/types";
+import { hashPassword } from "./api/src/lib/auth";
 
-// Load .env.example as a fallback if .env doesn't exist or variables aren't set
-if (fs.existsSync(".env.example")) {
-  const envConfig = dotenv.parse(fs.readFileSync(".env.example"));
-  for (const k in envConfig) {
-    if (!process.env[k]) {
-      process.env[k] = envConfig[k];
-    }
-  }
-}
+// Routes
+import authRoutes from "./api/src/routes/auth";
+import docRoutes from "./api/src/routes/documents";
+import vaultRoutes from "./api/src/routes/vault";
+import adminRoutes from "./api/src/routes/admin";
 
-// In-memory store for OTPs (for demo purposes)
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = 5000;
 
+  app.use(cors());
   app.use(express.json());
 
-  // Use the new API router
-  app.use('/api', apiRouter);
+  // Initialize default admin
+  const users = readJson<User[]>('users.json', []);
+  if (!users.find(u => u.email === 'admin@local')) {
+    const adminUser: User = {
+      id: 'admin-1',
+      fullName: 'System Admin',
+      email: 'admin@local',
+      passwordHash: await hashPassword('Admin@1234'),
+      role: 'admin',
+      createdAt: new Date().toISOString()
+    };
+    users.push(adminUser);
+    writeJson('users.json', users);
+    console.log("Default admin created: admin@local / Admin@1234");
+  }
+
+  // API Routes
+  app.use('/api/auth', authRoutes);
+  app.use('/api/documents', docRoutes);
+  app.use('/api/vault', vaultRoutes);
+  app.use('/api/admin', adminRoutes);
+
+  // Global Error Handler
+  app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+    console.error("Unhandled Error:", err);
+    res.status(err.status || 500).json({
+      error: err.message || 'Internal Server Error',
+      details: process.env.NODE_ENV === 'development' ? err.stack : undefined
+    });
+  });
 
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
@@ -32,11 +59,14 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    app.use(express.static("dist"));
+    app.use(express.static(path.join(process.cwd(), "dist")));
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(process.cwd(), "dist", "index.html"));
+    });
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`DocShield Lite running in ${process.env.NODE_ENV || 'development'} mode on http://localhost:${PORT}`);
   });
 }
 

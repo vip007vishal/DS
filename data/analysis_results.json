@@ -1,0 +1,200 @@
+[
+  {
+    "id": "465f988f-d611-431f-a16f-16f78617b501",
+    "documentId": "ceac6aa8-9710-46a9-82b8-fd2a781f4c12",
+    "ownerId": "admin-1",
+    "createdAt": "2026-03-05T03:52:07.217Z",
+    "geminiRawJson": {
+      "doc_type": "invoice",
+      "confidence": 0.98,
+      "ocr_text": "INVOICE\nNO: INV-12345-1\nBill To:\nEstelle Darcy\n+123-456-7890\n123 Anywhere St., Any City\nFrom:\nSamira Hadid\n+123-456-7890\n123 Anywhere St., Any City\nDate: 26 June 2022\nDescription Qty Price Total\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nSub Total $0.00\nNote:\nPayment Information:\nBank: Name Bank\nNo Bank: 123-456-7890\nEmail: hello@reallygreatsite.com\nThank You!",
+      "entities": {
+        "invoice_number": "INV-12345-1",
+        "invoice_date": "26 June 2022",
+        "recipient_name": "Estelle Darcy",
+        "recipient_phone": "+123-456-7890",
+        "recipient_address": "123 Anywhere St., Any City",
+        "sender_name": "Samira Hadid",
+        "sender_phone": "+123-456-7890",
+        "sender_address": "123 Anywhere St., Any City",
+        "sub_total": "$0.00",
+        "total_amount": "$0.00",
+        "bank_name": "Name Bank",
+        "bank_account_number": "123-456-7890",
+        "contact_email": "hello@reallygreatsite.com"
+      },
+      "pii": [
+        {
+          "type": "name",
+          "text": "Estelle Darcy",
+          "score": 0.99
+        },
+        {
+          "type": "name",
+          "text": "Samira Hadid",
+          "score": 0.99
+        },
+        {
+          "type": "phone",
+          "text": "+123-456-7890",
+          "score": 0.99
+        },
+        {
+          "type": "address",
+          "text": "123 Anywhere St., Any City",
+          "score": 0.95
+        },
+        {
+          "type": "email",
+          "text": "hello@reallygreatsite.com",
+          "score": 0.99
+        },
+        {
+          "type": "account_number",
+          "text": "123-456-7890",
+          "score": 0.9
+        }
+      ],
+      "redactions": [
+        {
+          "text": "Estelle Darcy",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "Samira Hadid",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "+123-456-7890",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "123 Anywhere St., Any City",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "123-456-7890",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "hello@reallygreatsite.com",
+          "replacement": "[REDACTED]"
+        }
+      ],
+      "validation": [
+        {
+          "rule": "invoice_number_present",
+          "status": "pass",
+          "message": "Invoice number was successfully extracted."
+        },
+        {
+          "rule": "date_present",
+          "status": "pass",
+          "message": "Invoice date was successfully extracted."
+        },
+        {
+          "rule": "total_calculation",
+          "status": "pass",
+          "message": "The sum of line items matches the sub-total."
+        }
+      ],
+      "errors": []
+    },
+    "normalizedJson": {
+      "doc_type": "invoice",
+      "confidence": 0.98,
+      "ocr_text": "INVOICE\nNO: INV-12345-1\nBill To:\nEstelle Darcy\n+123-456-7890\n123 Anywhere St., Any City\nFrom:\nSamira Hadid\n+123-456-7890\n123 Anywhere St., Any City\nDate: 26 June 2022\nDescription Qty Price Total\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nYour Description 1 $0.00 $0.00\nSub Total $0.00\nNote:\nPayment Information:\nBank: Name Bank\nNo Bank: 123-456-7890\nEmail: hello@reallygreatsite.com\nThank You!",
+      "entities": {
+        "invoice_number": "INV-12345-1",
+        "invoice_date": "26 June 2022",
+        "recipient_name": "Estelle Darcy",
+        "recipient_phone": "+123-456-7890",
+        "recipient_address": "123 Anywhere St., Any City",
+        "sender_name": "Samira Hadid",
+        "sender_phone": "+123-456-7890",
+        "sender_address": "123 Anywhere St., Any City",
+        "sub_total": "$0.00",
+        "total_amount": "$0.00",
+        "bank_name": "Name Bank",
+        "bank_account_number": "123-456-7890",
+        "contact_email": "hello@reallygreatsite.com"
+      },
+      "pii": [
+        {
+          "type": "name",
+          "text": "Estelle Darcy",
+          "score": 0.99
+        },
+        {
+          "type": "name",
+          "text": "Samira Hadid",
+          "score": 0.99
+        },
+        {
+          "type": "phone",
+          "text": "+123-456-7890",
+          "score": 0.99
+        },
+        {
+          "type": "address",
+          "text": "123 Anywhere St., Any City",
+          "score": 0.95
+        },
+        {
+          "type": "email",
+          "text": "hello@reallygreatsite.com",
+          "score": 0.99
+        },
+        {
+          "type": "account_number",
+          "text": "123-456-7890",
+          "score": 0.9
+        }
+      ],
+      "redactions": [
+        {
+          "text": "Estelle Darcy",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "Samira Hadid",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "+123-456-7890",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "123 Anywhere St., Any City",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "123-456-7890",
+          "replacement": "[REDACTED]"
+        },
+        {
+          "text": "hello@reallygreatsite.com",
+          "replacement": "[REDACTED]"
+        }
+      ],
+      "validation": [
+        {
+          "rule": "invoice_number_present",
+          "status": "pass",
+          "message": "Invoice number was successfully extracted."
+        },
+        {
+          "rule": "date_present",
+          "status": "pass",
+          "message": "Invoice date was successfully extracted."
+        },
+        {
+          "rule": "total_calculation",
+          "status": "pass",
+          "message": "The sum of line items matches the sub-total."
+        }
+      ],
+      "errors": []
+    }
+  }
+]

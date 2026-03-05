@@ -1,53 +1,43 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './hooks/useAuth';
+import AppShell from './components/AppShell';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import Upload from './pages/Upload';
+import AnalysisResult from './pages/AnalysisResult';
+import FilesLocked from './pages/FilesLocked';
+import AdminLogs from './pages/AdminLogs';
+import Profile from './pages/Profile';
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Toaster } from "sonner";
-import { AuthLayout } from "./components/layout/AuthLayout";
-import { DashboardLayout } from "./components/layout/DashboardLayout";
-import { Login } from "./pages/auth/Login";
-import { Signup } from "./pages/auth/Signup";
-import { EmployeeDashboard } from "./pages/employee/Dashboard";
-import { UploadDocument } from "./pages/employee/Upload";
-import { Vault } from "./pages/employee/Vault";
-import { DocumentView } from "./pages/employee/DocumentView";
-import { AdminDashboard } from "./pages/admin/Dashboard";
-import { AdminDocuments } from "./pages/admin/Documents";
-import { AdminDocumentView } from "./pages/admin/DocumentView";
-import { AdminLogs } from "./pages/admin/Logs";
+function ProtectedRoute({ children, adminOnly = false }: { children: React.ReactNode, adminOnly?: boolean }) {
+  const { user, token } = useAuth();
+  if (!token) return <Navigate to="/login" replace />;
+  if (adminOnly && user?.role !== 'admin') return <Navigate to="/" replace />;
+  return <>{children}</>;
+}
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Toaster position="top-right" />
-      <Routes>
-        <Route path="/" element={<Navigate to="/auth/login" replace />} />
-        
-        <Route path="/auth" element={<AuthLayout />}>
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
-        </Route>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          
+          <Route element={<ProtectedRoute><AppShell /></ProtectedRoute>}>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/upload" element={<Upload />} />
+            <Route path="/analysis/:id" element={<AnalysisResult />} />
+            <Route path="/files" element={<FilesLocked />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/admin/logs" element={<ProtectedRoute adminOnly><AdminLogs /></ProtectedRoute>} />
+          </Route>
 
-        <Route path="/employee" element={<DashboardLayout role="employee" />}>
-          <Route index element={<EmployeeDashboard />} />
-          <Route path="upload" element={<UploadDocument />} />
-          <Route path="vault" element={<Vault />} />
-          <Route path="view/:docId" element={<DocumentView />} />
-        </Route>
-
-        <Route path="/admin" element={<DashboardLayout role="admin" />}>
-          <Route index element={<AdminDashboard />} />
-          <Route path="documents" element={<AdminDocuments />} />
-          <Route path="view/:docId" element={<AdminDocumentView />} />
-          <Route path="logs" element={<AdminLogs />} />
-          {/* Optional rules page placeholder */}
-          <Route path="rules" element={<div className="p-8 text-center text-slate-500">Rules Configuration (Coming Soon)</div>} />
-        </Route>
-
-        <Route path="*" element={<Navigate to="/auth/login" replace />} />
-      </Routes>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

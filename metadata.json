@@ -1,5 +1,5 @@
 {
-  "name": "Remix: SecureDoc AI",
-  "description": "Secure Document Intelligence \u0026 Data Extraction",
+  "name": "DocShield Lite",
+  "description": "Secure document intelligence and data extraction platform powered by Gemini AI.",
   "requestFramePermissions": []
 }

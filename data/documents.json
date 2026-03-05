@@ -1,0 +1,75 @@
+[
+  {
+    "id": "8813faa3-eaaf-4b84-b442-c5bfe16e8844",
+    "ownerId": "admin-1",
+    "filename": "67e5b68098cd6f7e0ba7f30c_download-invoice-5.png",
+    "contentType": "image/png",
+    "sizeBytes": 50550,
+    "storagePath": "C:\\Users\\Vishal\\Downloads\\docshield-main\\data\\uploads\\b12127adeacc2001be1f03051d6ee38f",
+    "createdAt": "2026-03-05T03:21:16.320Z"
+  },
+  {
+    "id": "21ea519e-3c98-4594-8167-09db6008487e",
+    "ownerId": "admin-1",
+    "filename": "67e5b68098cd6f7e0ba7f30c_download-invoice-5.png",
+    "contentType": "image/png",
+    "sizeBytes": 50550,
+    "storagePath": "C:\\Users\\Vishal\\Downloads\\docshield-main\\data\\uploads\\93280e3bb2353c8daec6489921131151",
+    "createdAt": "2026-03-05T03:22:17.877Z"
+  },
+  {
+    "id": "f9d0dc85-154e-4428-81e0-bef1e748a929",
+    "ownerId": "admin-1",
+    "filename": "images.jpg",
+    "contentType": "image/jpeg",
+    "sizeBytes": 7334,
+    "storagePath": "C:\\Users\\Vishal\\Downloads\\docshield-main\\data\\uploads\\fff8f61b9e2c21cfbd157385666b36bb",
+    "createdAt": "2026-03-05T03:22:31.015Z"
+  },
+  {
+    "id": "c9ac6b07-e227-490f-adf7-abf122a71cde",
+    "ownerId": "admin-1",
+    "filename": "67e5b68098cd6f7e0ba7f30c_download-invoice-5.png",
+    "contentType": "image/png",
+    "sizeBytes": 50550,
+    "storagePath": "C:\\Users\\Vishal\\Downloads\\docshield-main\\data\\uploads\\e12a4a6759cc08e47b2e1c7b512e69fe",
+    "createdAt": "2026-03-05T03:23:33.645Z"
+  },
+  {
+    "id": "696dec98-7669-4386-b9f6-f17b8b637839",
+    "ownerId": "admin-1",
+    "filename": "images.jpg",
+    "contentType": "image/jpeg",
+    "sizeBytes": 7334,
+    "storagePath": "C:\\Users\\Vishal\\Downloads\\docshield-main\\data\\uploads\\a28edb1ae6d350f1322ef03aa7009aca",
+    "createdAt": "2026-03-05T03:25:52.427Z"
+  },
+  {
+    "id": "ab186fb7-c27a-4990-93b8-fd05b217bfd5",
+    "ownerId": "admin-1",
+    "filename": "WhatsApp Image 2026-03-04 at 14.30.28.jpeg",
+    "contentType": "image/jpeg",
+    "sizeBytes": 25793,
+    "storagePath": "C:\\Users\\Vishal\\Downloads\\docshield-main\\data\\uploads\\a6c026dfa915826738758b320929a6cb",
+    "createdAt": "2026-03-05T03:26:07.276Z"
+  },
+  {
+    "id": "0ce5cff9-869e-4cf9-86b9-bfba30494e24",
+    "ownerId": "admin-1",
+    "filename": "images.jpg",
+    "contentType": "image/jpeg",
+    "sizeBytes": 7334,
+    "storagePath": "C:\\Users\\Vishal\\Downloads\\docshield-main\\data\\uploads\\91ac85251cc502cfd9beed8a188cb7d4",
+    "createdAt": "2026-03-05T03:28:51.117Z"
+  },
+  {
+    "id": "ceac6aa8-9710-46a9-82b8-fd2a781f4c12",
+    "ownerId": "admin-1",
+    "filename": "images.jpg",
+    "contentType": "image/jpeg",
+    "sizeBytes": 7334,
+    "storagePath": "C:\\Users\\Vishal\\Downloads\\docshield-main\\data\\uploads\\1422d23083d0dedbd5780a8adfd99e7d",
+    "createdAt": "2026-03-05T03:51:51.814Z",
+    "latestAnalysisId": "465f988f-d611-431f-a16f-16f78617b501"
+  }
+]

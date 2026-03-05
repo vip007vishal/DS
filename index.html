@@ -8,6 +8,18 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+  
+    <script>
+      (function(){
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get('p');
+        if(p){
+          var clean = p.startsWith('/') ? p : '/' + p;
+          window.history.replaceState(null, '', clean);
+        }
+      })();
+    </script>
+    
+</body>
 </html>
 
