@@ -15,7 +15,7 @@ import adminRoutes from "./api/src/routes/admin";
 
 async function startServer() {
   const app = express();
-  const PORT = 5000;
+  const PORT = 3000;
 
   app.use(cors());
   app.use(express.json());

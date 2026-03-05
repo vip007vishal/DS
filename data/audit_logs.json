@@ -1,5 +1,29 @@
 [
   {
+    "id": "b068b637-a379-408b-9ca5-c6a9acf9450e",
+    "actorUserId": "admin-1",
+    "actorEmail": "admin@local",
+    "action": "DOC_UPLOAD",
+    "resourceType": "document",
+    "resourceId": "095daa24-3312-4364-8515-df588711c476",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "createdAt": "2026-03-05T04:24:03.719Z",
+    "details": "Uploaded: images.jpg"
+  },
+  {
+    "id": "99d21c48-4247-4fd7-afdb-2df40f903471",
+    "actorUserId": "system",
+    "actorEmail": "system",
+    "action": "USER_LOGIN",
+    "resourceType": "user",
+    "resourceId": "admin-1",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "createdAt": "2026-03-05T04:23:53.645Z",
+    "details": "User logged in: admin@local"
+  },
+  {
     "id": "97849254-118b-4047-8e3b-c5a0c36f0510",
     "actorUserId": "admin-1",
     "actorEmail": "admin@local",

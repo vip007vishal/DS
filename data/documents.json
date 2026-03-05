@@ -71,5 +71,14 @@
     "storagePath": "C:\\Users\\Vishal\\Downloads\\docshield-main\\data\\uploads\\1422d23083d0dedbd5780a8adfd99e7d",
     "createdAt": "2026-03-05T03:51:51.814Z",
     "latestAnalysisId": "465f988f-d611-431f-a16f-16f78617b501"
+  },
+  {
+    "id": "095daa24-3312-4364-8515-df588711c476",
+    "ownerId": "admin-1",
+    "filename": "images.jpg",
+    "contentType": "image/jpeg",
+    "sizeBytes": 7334,
+    "storagePath": "C:\\Users\\Vishal\\DS\\data\\uploads\\4c48db88814825b8eaa4973521b61eff",
+    "createdAt": "2026-03-05T04:24:03.718Z"
   }
 ]
